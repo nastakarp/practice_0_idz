@@ -10,7 +10,7 @@ class StyledApp:
         self.root.geometry("600x400")
 
         # Настройка фонового изображения
-        self.bg_image = tk.PhotoImage(file="bf.png")
+        self.bg_image = tk.PhotoImage(file="butterfly.png")
         self.bg_label = tk.Label(root, image=self.bg_image)
         self.bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
