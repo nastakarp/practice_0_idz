@@ -26,7 +26,7 @@ class DrawingApp:
         self.create_filled_shapes_tab()
 
     def create_line_tab(self):
-        """Вкладка для рисования линии"""
+        #Вкладка для рисования линии
         tab = ttk.Frame(self.notebook)
         self.notebook.add(tab, text="Линия")
 
@@ -57,7 +57,7 @@ class DrawingApp:
         self.line_canvas.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
 
     def create_triangle_tab(self):
-        """Вкладка для рисования треугольника"""
+        #Вкладка для рисования треугольника
         tab = ttk.Frame(self.notebook)
         self.notebook.add(tab, text="Треугольник")
 
@@ -90,7 +90,7 @@ class DrawingApp:
         self.triangle_canvas.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
 
     def create_ellipse_tab(self):
-        """Вкладка для рисования эллипса и окружности"""
+        #Вкладка для рисования эллипса и окружности
         tab = ttk.Frame(self.notebook)
         self.notebook.add(tab, text="Эллипс/Окружность")
 
@@ -127,7 +127,7 @@ class DrawingApp:
         self.ellipse_canvas.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
 
     def create_filled_shapes_tab(self):
-        """Вкладка для рисования закрашенных фигур"""
+        #Вкладка для рисования закрашенных фигур
         tab = ttk.Frame(self.notebook)
         self.notebook.add(tab, text="Закрашенные фигуры")
 
@@ -152,7 +152,7 @@ class DrawingApp:
         self.filled_canvas.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
 
     def get_coords(self, entries):
-        """Получение координат из полей ввода"""
+        #Получение координат из полей ввода
         try:
             return [int(entry.get()) for entry in entries]
         except ValueError:
@@ -160,7 +160,7 @@ class DrawingApp:
             return None
 
     def draw_line(self):
-        """Рисование линии"""
+        #Рисование линии
         coords = self.get_coords(self.line_entries)
         if coords is None:
             return
@@ -169,7 +169,7 @@ class DrawingApp:
         self.line_canvas.create_line(*coords, fill="green", width=2)
 
     def draw_triangle(self):
-        """Рисование треугольника"""
+        #Рисование треугольника
         coords = self.get_coords(self.triangle_entries)
         if coords is None:
             return
@@ -182,7 +182,7 @@ class DrawingApp:
         self.triangle_canvas.create_line(coords[4], coords[5], coords[0], coords[1], fill="blue", width=2)
 
     def draw_ellipse(self, is_circle):
-        """Рисование эллипса или окружности"""
+        #Рисование эллипса или окружности
         coords = self.get_coords(self.ellipse_entries)
         if coords is None:
             return
@@ -202,7 +202,7 @@ class DrawingApp:
         )
 
     def draw_filled_shape(self):
-        """Рисование закрашенной фигуры"""
+        #Рисование закрашенной фигуры
         self.filled_canvas.delete("all")
 
         shape = self.shape_var.get()

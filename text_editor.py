@@ -77,7 +77,7 @@ class TextEditor:
         self._save_to_file(filepath)
 
     def _save_to_file(self, filepath):
-        """Общая логика сохранения в файл"""
+        #Общая логика сохранения в файл
         try:
             with open(filepath, "w", encoding="utf-8") as file:
                 content = self.text.get(1.0, tk.END)
@@ -91,18 +91,18 @@ class TextEditor:
             return False
 
     def save_changes(self):
-        """Сохранение изменений с проверкой имени файла"""
+        #Сохранение изменений с проверкой имени файла
         if self.filename:
             return self._save_to_file(self.filename)
         else:
             return self.save_as() is not None
 
     def exit_editor(self):
-        """Выход через меню"""
+        #Выход через меню
         self.on_closing()
 
     def on_closing(self):
-        """Обработчик закрытия окна"""
+        #Обработчик закрытия окна
         if not self.text_modified:
             self.root.destroy()
             return

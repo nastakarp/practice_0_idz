@@ -30,7 +30,7 @@ class App:
         self.label.pack(pady=20)
 
     def copy_text(self):
-        """Копирует текст из текстового поля в метку"""
+        #Копирует текст из текстового поля в метку
         text = self.text_box.get()
         self.label.config(text=text)
 

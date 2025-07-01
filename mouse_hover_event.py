@@ -22,7 +22,7 @@ class HoverApp:
         self.label.bind("<Leave>", self.on_mouse_leave)  # Дополнительно - возврат к исходному состоянию
 
     def on_mouse_enter(self, event):
-        """Обработчик события наведения курсора на label"""
+        #Обработчик события наведения курсора на label
         self.label.config(
             text="ERROR!!!",
             fg='red'
@@ -33,7 +33,7 @@ class HoverApp:
         )
 
     def on_mouse_leave(self, event):
-        """Обработчик события когда курсор уходит с label"""
+        #Обработчик события когда курсор уходит с label
         self.label.config(
             text="Не трогай.",
             fg='black'
